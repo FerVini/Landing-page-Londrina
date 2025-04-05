@@ -7,6 +7,7 @@
 :root {
     --fonte-titulo: "Bebas Neue", sans-serif;
     --fonte-menu: "Montserrat", sans-serif;
+    --fonte-textos: 'Roboto', sans-serif;
     --vermelho: #c1272d;
     --branco: #fff;
 }
@@ -25,6 +26,7 @@ header {
     position: fixed;
     width: 100%;
     background-color: var(--branco);
+    box-shadow: 5px 0px 10px rgba(0, 0, 0, 0.5);
 
     h1 {
         font-size: 40px;
@@ -67,24 +69,131 @@ header {
 .banner {
     width: 100%;
     height: 100vh;
-    background-image: linear-gradient(rgba(20, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/banner-img.jpeg);
+    background-image: linear-gradient(rgba(25, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url(../images/banner-img.jpeg);
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 50px;
+    padding-left: 170px;
 
-    .titulo {
+    & .titulo {
         color: var(--branco);
         font-size: 70px;
         font-weight: 500;
         letter-spacing: 1px;
     }
 
-    .subtitulo {
+    & .subtitulo {
         color: var(--branco);
         font-family: var(--fonte-menu);
         font-size: 22px;
+    }
+}
+
+
+section {
+
+    padding-top: 40px;
+
+    h3 {
+        font-size: 36px;
+        text-align: center;
+        margin-bottom: 40px;
+    }
+    
+    &#sobre-londrina {
+
+        background-color: #f1f1f1;
+
+        .content-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            
+            p {
+                text-align: center;
+                width: 60%;
+                line-height: 26px;
+                margin: 15px auto 30px;
+                font-family: var(--fonte-textos);
+                font-size: 18px;
+            }
+        }
+    }
+
+    &#pontos-turisticos {
+        height: 80vh;
+
+        .pontos-container {
+            max-width: 70%;
+            height: 80%;
+            border-radius: 10px;
+            box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+            margin: 20px auto;
+            display: flex;
+            overflow: hidden;
+        }
+
+        .ponto-turistico {
+            flex: 1;
+            transition: all 0.5s ease;
+            display: flex;
+            flex-direction: column-reverse;
+            position: relative;
+            cursor: pointer;
+            color: white;
+            font-size: 1.5em;
+            font-weight: bold;
+
+            p {
+                opacity: 0;
+                transition: opacity 0.7s ease;
+                font-family: var(--fonte-textos);
+                font-size: 16px;
+                max-width: 70%;
+                margin-left: 40px;
+                margin-bottom: 10%;
+            }
+
+            .titulo {
+                margin: 15px 30px;
+                text-align: center;
+                font-size: 26px;
+            }
+        }
+
+        #container-lago-igapo {
+            background-image: radial-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8 )), url('../images/bg-lago-igapo.webp');
+            background-position: center left;
+            background-size: cover;
+        }
+        #container-jardim-botanico {
+            background-image: radial-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8 )), url('../images/bg-jardim_botanico.jpg');
+            background-position: left bottom;
+            background-size: cover;
+        }
+        #container-museu-historico {
+            background-image: radial-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8 )), url('../images/bg-museu-historico.png');
+            background-position: right bottom;
+            background-size: cover;
+        }
+        #container-catedral-metropolitana {
+            background-image: radial-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8 )), url('../images/bg-catedral-metropolitana.jpg');
+            background-position: right center;
+            background-size: cover;
+        }
+
+        .pontos-container:hover .ponto-turistico {
+            flex: 1;
+        }
+
+        .pontos-container .ponto-turistico:hover {
+            flex: 7;
+        }
+
+        .pontos-container .ponto-turistico:hover p {
+            opacity: 1;
+        }
     }
 }
