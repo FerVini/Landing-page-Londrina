@@ -8,6 +8,7 @@
     --fonte-titulo: "Bebas Neue", sans-serif;
     --fonte-menu: "Montserrat", sans-serif;
     --fonte-textos: 'Roboto', sans-serif;
+    --vermelho-claro: #d8181f;
     --vermelho: #c1272d;
     --branco: #fff;
 }
@@ -127,7 +128,6 @@ section {
 
         .pontos-container {
             max-width: 70%;
-            height: 80%;
             border-radius: 10px;
             box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
             margin: 20px auto;
@@ -142,9 +142,10 @@ section {
             flex-direction: column-reverse;
             position: relative;
             cursor: pointer;
-            color: white;
+            color: var(--branco);
             font-size: 1.5em;
             font-weight: bold;
+            border: 2px solid var(--vermelho-claro);
 
             p {
                 opacity: 0;
@@ -157,9 +158,10 @@ section {
             }
 
             .titulo {
-                margin: 15px 30px;
+                margin: 30px;
                 text-align: center;
                 font-size: 26px;
+                color: var(--vermelho-claro);
             }
         }
 
@@ -180,7 +182,7 @@ section {
         }
         #container-catedral-metropolitana {
             background-image: radial-gradient(rgba(0, 0, 0, 0.4),rgba(0, 0, 0, 0.8 )), url('../images/bg-catedral-metropolitana.jpg');
-            background-position: right center;
+            background-position: right bottom;
             background-size: cover;
         }
 
